@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar color="success">
+      <ion-title class="font-size">{{this.title}}</ion-title>
+
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/movies-home-page" icon="caret-back"></ion-back-button>
+      </ion-buttons>
+        
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-card style="text-align: center;">
+      <img src="{{this.images}}" alt="Movie Image">
+
+      <ion-card-header class="font-size">
+        <ion-card-subtitle>
+          {{this.original_title}}
+        </ion-card-subtitle>
+        <ion-text color="tertiary">
+          <span>Vote count: {{this.mPopularity}}</span>
+        </ion-text>
+        <ion-text color="tertiary" style="margin-inline: 2rem;">
+          <span>Language: {{this.mLanguage}}</span>
+        </ion-text>
+        <ion-text color="tertiary" style="float: right;">
+          <span>Vote average: {{this.mVote}}</span>
+        </ion-text>
+      </ion-card-header>
+
+    </ion-card>
+
+    <ion-card style="font-size: small;">
+        <p>{{this.movieContent}}</p>
+    </ion-card>
+
+  </ion-content>
+
+  <ion-footer>
+    <ion-button expand="full" (click)="movieLink()">
+      <p>Movie Full Details....</p>
+    </ion-button>
+  </ion-footer>

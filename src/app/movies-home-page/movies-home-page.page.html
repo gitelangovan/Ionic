@@ -1,0 +1,22 @@
+<ion-header class="align-center">
+  <ion-toolbar color="bg-color">
+    <ion-title>Listed Movies</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list class="font-size">
+    <ion-item button *ngFor="let item of this.jsonData.moviesData" (click)="routingData(item.id)">
+      <ion-avatar slot="start">
+        <img src="{{item.Images}}">
+      </ion-avatar>
+      <ion-label>
+        {{item.title}}
+        <p>{{item.release_date | date:'y'}}</p>
+      </ion-label>
+      <ion-badge slot="end">{{item.vote_average}}</ion-badge>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
